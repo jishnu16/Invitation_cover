@@ -1,0 +1,113 @@
+Prints  Invitation Label:-
+
+v1
+
+List of records
+format:- firstName,lastName,gender,age,city,state,country
+
+Requirments:-
+    output:-
+        Prefix John Doe,Country,age
+             or
+        Prefix Smith, Jane,Country,age
+
+        Mr  =>  Male
+        Ms   => Female
+
+Usage:-
+
+               $cat records
+                   Melody,Dooley,Female,31,West Shanna,Vermont,Bangladesh
+                   Gavin,Hyatt,Male,36,Crooks ton,Illinois,Romania
+
+               $./printName.sh surnameFirst records
+                    Ms Dooley, Melody
+                    Mr Hyatt, Gavin
+
+               $./printName.sh formalName records
+                    Ms Melody Dooley
+                    Mr Gavin Hyatt
+
+
+-------------------------------------------------------------------------------------------------------
+v1+v2
+
+Requirments:-
+        Counry specific search
+
+Usage:-
+                    $cat records
+                      Melody,Dooley,Female,31,West Shanna,Vermont,Bangladesh
+                      Gavin,Hyatt,Male,36,Crooks ton,Illinois,Romania
+
+                    $./printName.sh formalName Bangladesh records
+                         Ms Melody Dooley
+
+                    $./printName.sh surnameFirst Bangladesh records
+                        Ms Dooley, Melody
+
+
+------------------------------------------------------------------------------------------------------
+
+v1+v2+v3
+
+Requirments:-
+     all invitees above the age of 20.
+     filter people above a certain age.
+     legal drinking age from a specific country. ??(It may be vary country to country);
+
+     example:-
+     Mr John Smith, Bangladesh, 20
+     Ms Doe, Jane, Bangladesh, 30
+
+Usage:-
+
+             $cat records
+                Melody,Dooley,Female,31,West Shanna,Vermont,Bangladesh
+                Gavin,Hyatt,Male,36,Crooks ton,Illinois,Romania
+                Princess,Luettgen,Male,31,Katlynn view,South Carolina,Qatar
+                Melissa,Hessel,Male,18,Veda haven,Vermont,Romania
+                Torrey,Marvin,Male,19,Veda haven,South Carolina,Qatar
+
+             $./printName.sh formalName Qatar drinkers records
+                 Mr Princess Luettgen, Qatar, 31
+
+             $./printLabelWithLegalDrinkers.sh lastNameFirst Romania
+                 Mr Hyatt, Gavin,Romania, 36
+
+=================================================================================================
+
+ v4
+         $cat records
+           Melody,Dooley,Female,31,West Shanna,Vermont,Bangladesh
+           Gavin,Hyatt,Male,36,Crooks ton,Illinois,Romania
+           Princess,Luettgen,Male,31,Katlynn view,South Carolina,Qatar
+           Melissa,Hessel,Male,18,Veda haven,Vermont,Romania
+           Torrey,Marvin,Male,19,Veda haven,South Carolina,Qatar
+
+         $./printName.sh formalName Qatar drinkers records
+            +---------------------------+
+            | Mr Princess Luettgen     |
+            |---------------------------- |
+            | West Shanna, Vermont |
+            | Bangladesh                 |
+            +----------------------------+
+
+
+
+Tomorrow:-
+
+./printLabelsWithFormalName.sh <countryName> <drinkersOption>
+
+./printLabelsWithSurnameFirst.sh <countryName> <drinkersOption>
+
+
+*make a method in guestList(C) that process information is reduced and it should be tested.
+*make a method in nameRepresentationWithCountry(C) that process information is reduced and it should be tested.
+*make a method in nameRepresentationWithLegalCountry(C) that process information is reduced and it should be tested.
+
+
+
+
+
+
